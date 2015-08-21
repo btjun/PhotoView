@@ -1,6 +1,17 @@
+language: android
+jdk: openjdk7
+android:
+  components:
+    - build-tools-22.0.1
+    - extra-android-support
+    - extra-android-m2repository
+    - android-22
+  licenses:
+    - '.+'
+script:
+  - ./gradlew clean assemble check
 branches:
   only:
-    - dev
     - master
 language:
   - java
@@ -31,3 +42,4 @@ before_install:
   # manually set sdk.dir variable, according to local paths
   - echo "sdk.dir=$ANDROID_HOME" > local.properties
   - echo yes | android update sdk -a -t tools,platform-tools,extra-android-support,extra-android-m2repository,android-19,build-tools-19.0.3 --force --no-ui
+>>>>>>> Fixed Gradle(w) build and Travis errors

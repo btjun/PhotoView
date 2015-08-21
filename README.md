@@ -1,5 +1,15 @@
 # PhotoView
+***
 
+## Deprecation notice
+
+Library has currently no active maintainers, if you're interested, contact Chris Banes (repository owner)
+
+If you have project built on top of this library, you can still submit pull-requests with fixes, for others to see, but you shall expect no response from former maintainers or Chris himself
+
+Version **1.2.4** is the last version officially released (as of 2nd April 2015)
+
+***
 Branch **Dev**: [![Build Status](https://travis-ci.org/chrisbanes/PhotoView.png?branch=dev)](https://travis-ci.org/chrisbanes/PhotoView)  
 Branch **Master**: [![Build Status](https://travis-ci.org/chrisbanes/PhotoView.png?branch=master)](https://travis-ci.org/chrisbanes/PhotoView)
 
@@ -19,11 +29,24 @@ The sample application (the source is in the repository) has been published onto
 
 [![Get it on Google Play](http://www.android.com/images/brand/get_it_on_play_logo_small.png)](http://play.google.com/store/apps/details?id=uk.co.senab.photoview.sample)
 
+## Gradle integration
+
+Minimum code for Gradle integration, place code in your `build.gradle`
+
+```gradle
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile 'com.github.chrisbanes.photoview:library:1.2.4'
+}
+```
 
 ## Sample Usage
 There is a [sample](https://github.com/chrisbanes/PhotoView/tree/master/sample) provided which shows how to use the library in a more advanced way, but for completeness here is all that is required to get PhotoView working:
 
-``` java
+```java
 ImageView mImageView;
 PhotoViewAttacher mAttacher;
 
@@ -45,8 +68,12 @@ public void onCreate(Bundle savedInstanceState) {
 
 
 // If you later call mImageView.setImageDrawable/setImageBitmap/setImageResource/etc then you just need to call
-attacher.update();
+mAttacher.update();
 ```
+
+## Pull Requests / Contribution
+Development happens in **dev** branch of this repository, and Pull Requests should be filled against that branch.
+Any Pull Request against **master** will be rejected
 
 ## Changelog
 Please see the new [Changelog](https://github.com/chrisbanes/PhotoView/wiki/Changelog) page to see what's recently changed.
